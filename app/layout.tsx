@@ -11,11 +11,11 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'EventMe',
-  description: 'EventMe is a platform for event management.',
+  title: 'EventTech',
+  description: 'EventTech is a platform for event management.',
   icons: {
-    icon: '/assets/images/logo.svg'
-  }
+    icon: '/assets/images/logo.svg',
+  },
 }
 
 export default function RootLayout({
@@ -25,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider>
-      <html lang="en">
+      <html lang='en'>
         <body className={poppins.variable}>{children}</body>
       </html>
     </ClerkProvider>
