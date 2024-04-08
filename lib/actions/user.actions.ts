@@ -38,7 +38,9 @@ export async function updateUser(clerkId: string, user: UpdateUserParams) {
   try {
     await connectToDatabase()
 
-    const updatedUser = await User.findOneAndUpdate({ clerkId }, user, { new: true })
+    const updatedUser = await User.findOneAndUpdate({ clerkId }, user, {
+      new: true,
+    })
 
     if (!updatedUser) throw new Error('User update failed')
     return JSON.parse(JSON.stringify(updatedUser))
@@ -67,7 +69,10 @@ export async function deleteUser(clerkId: string) {
       ),
 
       // Update the 'orders' collection to remove references to the user
-      Order.updateMany({ _id: { $in: userToDelete.orders } }, { $unset: { buyer: 1 } }),
+      Order.updateMany(
+        { _id: { $in: userToDelete.orders } },
+        { $unset: { buyer: 1 } }
+      ),
     ])
 
     // Delete user
