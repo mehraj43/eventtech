@@ -11,8 +11,8 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'EventTech',
-  description: 'EventTech is a platform for event management.',
+  title: 'EvenTech',
+  description: 'EvenTech is a platform for event management.',
   icons: {
     icon: '/assets/images/logo.svg',
   },
